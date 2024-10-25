@@ -5,7 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
 
-mongoose.connect("mongodb+srv://jaipatel4717:<bxmqtEaDUtLmRgue>@mealplanningusers.sapy2.mongodb.net/?retryWrites=true&w=majority&appName=MealPlanningUsers", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://jaipatel4717:bxmqtEaDUtLmRgue@mealplanningusers.sapy2.mongodb.net/?retryWrites=true&w=majority&appName=MealPlanningUsers", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.log("Error connecting to MongoDB:", err));
 
