@@ -1,7 +1,12 @@
-import React from 'react';
-import NutritionalGoals from './NutritionalGoals';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import NutritionalGoals from './components/NutritionalGoals';
+import Login from './components/Login';
+import Register from './components/Register';
 
 const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const handleGoalsSubmit = async (goals) => {
       try {
           const response = await fetch('http://localhost:5000/api/goals', {
@@ -17,18 +22,31 @@ const App = () => {
           }
 
           const data = await response.json();
-          console.log(data); // Handle the filtered recipes here
+          console.log(data);
       } catch (error) {
           console.error('Error:', error);
       }
   };
 
   return (
-      <div>
-          <h1>Meal Planning</h1>
-          <NutritionalGoals onSubmit={handleGoalsSubmit} />
-          {/* Render filtered recipes here */}
-      </div>
+      <Router>
+          <div>
+              <h1>Meal Planning</h1>
+              <Routes>
+                  <Route path="/" element={<Navigate to="/register" />} /> {/* Redirect root to /register */}
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
+                  <Route
+                      path="/goals"
+                      element={isAuthenticated ? (
+                          <NutritionalGoals onSubmit={handleGoalsSubmit} />
+                      ) : (
+                          <Navigate to="/login" />
+                      )}
+                  />
+              </Routes>
+          </div>
+      </Router>
   );
 };
 
