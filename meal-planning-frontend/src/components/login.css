@@ -1,0 +1,88 @@
+/* Login.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fcd0c5; 
+    display: flex;
+    flex-direction: row; /* Set flex direction to row */
+    align-items: center; /* Center vertically */
+    height: 100vh; 
+    margin: 0; 
+    position: relative; 
+    background-image: url(../../public/assets/try.jpg); 
+    background-position: right 40px bottom 20px;
+    padding-right: 20px;
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
+
+.left-side {
+    flex: 1;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content to the left */
+
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Center the form horizontally */
+    align-items: center; /* Center vertically */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: rgba(252, 208, 197, 0.6);
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment */
+    background: linear-gradient(135deg, #f73302 0%, #d00000 100%); 
+    border-radius: 10px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); 
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    text-align: center; 
+    position: relative;
+    z-index: 2;
+}
+
+input {
+    margin: 10px 0; /* Add space between input fields */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #2814df;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animation on hover */
+button:hover {
+    transform: scale(1.1); /* Scale up the button */
+    background-color: #1e0cb7; /* Change background color on hover */
+}
+
+/* Optional: Animation on active (when button is clicked) */
+button:active {
+    transform: scale(0.9); /* Scale down the button */
+}
+
+p {
+    margin-top: 15px;
+}
