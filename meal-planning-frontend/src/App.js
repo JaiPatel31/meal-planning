@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import NutritionalGoals from './components/NutritionalGoals';
 import Login from './components/Login';
 import Register from './components/Register';
+import LandingPage from './components/LandingPage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleGoalsSubmit = async (goals) => {
       try {
-          const response = await fetch('http://localhost:5000/api/goals', {
+          const response = await fetch('http://localhost:5001/api/goals', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
@@ -31,9 +32,8 @@ const App = () => {
   return (
       <Router>
           <div>
-              <h1>Meal Planning</h1>
               <Routes>
-                  <Route path="/" element={<Navigate to="/register" />} /> {/* Redirect root to /register */}
+                  <Route path="/" element={<LandingPage/>} /> {/* Redirect root to /register */}
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
                   <Route
