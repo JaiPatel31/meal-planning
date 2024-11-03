@@ -4,49 +4,33 @@ import NutritionalGoals from './components/NutritionalGoals';
 import Login from './components/Login';
 import Register from './components/Register';
 import LandingPage from './components/LandingPage';
+import RecipeList from './components/RecipeList';
+import RecipeDetail from './components/RecipeDetail'; // Import RecipeDetail
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleGoalsSubmit = async (goals) => {
-      try {
-          const response = await fetch('http://localhost:5001/api/goals', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(goals),
-          });
-
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
-          }
-
-          const data = await response.json();
-          console.log(data);
-      } catch (error) {
-          console.error('Error:', error);
-      }
+    // Your existing handleGoalsSubmit function
   };
 
   return (
-      <Router>
-          <div>
-              <Routes>
-                  <Route path="/" element={<LandingPage/>} /> {/* Redirect root to /register */}
-                  <Route path="/register" element={<Register />} />
-                  <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
-                  <Route
-                      path="/goals"
-                      element={isAuthenticated ? (
-                          <NutritionalGoals onSubmit={handleGoalsSubmit} />
-                      ) : (
-                          <Navigate to="/login" />
-                      )}
-                  />
-              </Routes>
-          </div>
-      </Router>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<LandingPage />} /> {/* Redirect root to /register */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/RecipeList" element={<RecipeList />} />
+          <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
+          <Route path="/goals" element={isAuthenticated ? (
+            <NutritionalGoals onSubmit={handleGoalsSubmit} />
+          ) : (
+            <Navigate to="/login" />
+          )} />
+          <Route path="/recipes/:id" element={<RecipeDetail />} /> {/* New route for recipe details */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
