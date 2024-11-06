@@ -43,19 +43,16 @@ function RecipeList() {
         const imageUrl = Array.isArray(imageUrls) && imageUrls.length > 0 ? imageUrls[0] : "https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png";
 
         return (
-          <div key={recipe._id} style={{ display: "flex", alignItems: "center", margin: "10px 0" }}>
-            <img
-              src={imageUrl}
-              alt={recipe.Name}
-              style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "10px" }}
-            />
-            <div>
-              <h3>
-                <Link to={`/recipes/${recipe._id}`}>{recipe.Name}</Link> {/* Link to RecipeDetail using ObjectID */}
-              </h3>
-              <button>Add to Meal Plan</button>
+          <a href={`/recipes/${recipe._id}`}>
+            <div key={recipe._id} style={{ display: "flex", alignItems: "center", margin: "10px 0" }}>
+              <img
+                src={imageUrl}
+                alt={recipe.Name}
+                style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "10px" }}
+              />
+              <h1>{recipe.Name}</h1>
             </div>
-          </div>
+          </a>
         );
       })}
       <div>

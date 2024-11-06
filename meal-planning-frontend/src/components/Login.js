@@ -19,7 +19,7 @@ function Login({ onLogin }) {
       alert("Login successful");
 
       onLogin(); // Update authentication state in App component
-      navigate("/goals"); // Redirect to NutritionalGoals page
+      navigate("/recipelist"); // Redirect to NutritionalGoals page
     } catch (error) {
       console.error("Error logging in:", error);
       alert("Invalid username or password."); // Optional: Alert on failure
