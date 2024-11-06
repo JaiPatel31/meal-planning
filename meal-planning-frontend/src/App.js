@@ -1,36 +1,49 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import NutritionalGoals from './components/NutritionalGoals';
 import Login from './components/Login';
 import Register from './components/Register';
 import LandingPage from './components/LandingPage';
 import RecipeList from './components/RecipeList';
 import RecipeDetail from './components/RecipeDetail'; // Import RecipeDetail
+import MealPlanner from './components/MealPlanner';
+import { MealPlanProvider } from "./components/MealPlanContext";
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => JSON.parse(localStorage.getItem('isAuthenticated')) || false
+  );
 
-  const handleGoalsSubmit = async (goals) => {
-    // Your existing handleGoalsSubmit function
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+    localStorage.setItem('isAuthenticated', JSON.stringify(true));
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    localStorage.removeItem('isAuthenticated');
   };
 
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<LandingPage />} /> {/* Redirect root to /register */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/RecipeList" element={<RecipeList />} />
-          <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
-          <Route path="/goals" element={isAuthenticated ? (
-            <NutritionalGoals onSubmit={handleGoalsSubmit} />
-          ) : (
-            <Navigate to="/login" />
-          )} />
-          <Route path="/recipes/:id" element={<RecipeDetail />} /> {/* New route for recipe details */}
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <MealPlanProvider>
+        <Router>
+          <div>
+            <Routes>
+              <Route path="/" element={<LandingPage />} /> {/* Redirect root to /register */}
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
+              <Route path="/recipelist" element={isAuthenticated ? (
+                <RecipeList />
+              ) : (
+                <Navigate to="/login" />
+              )} />
+              <Route path="/recipes/:id" element={<RecipeDetail />} /> {/* New route for recipe details */}
+              <Route path="/mealplanner" element={<MealPlanner />} />
+            </Routes>
+          </div>
+        </Router>
+      </MealPlanProvider>
+    </>
   );
 };
 

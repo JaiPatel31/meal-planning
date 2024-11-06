@@ -43,6 +43,7 @@ body {
     opacity: 1;
     font-weight: bold;
     margin-top: 15px;
+    color: white;
 }
 
 .nav-item:hover {
@@ -248,9 +249,9 @@ body {
 
 .footer-text {
     margin: 20px;
+    color: white;
 }
 
 a {
-    color: white;
     text-decoration: none;
 }

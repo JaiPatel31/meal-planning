@@ -35,7 +35,7 @@ function Register() {
         <button type="submit">Register</button>
       </form>
       <p>
-        Already have an account? <Link to="/login">Login</Link> {/* Link to login page */}
+        Already have an account? <Link style={{ color: 'blue', textDecoration: 'underline' }} to="/login">Login</Link> {/* Link to login page */}
       </p>
     </div>
   );
