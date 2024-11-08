@@ -1,0 +1,67 @@
+.chatbot {
+    width: 350px;
+    height: 500px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Floating the chatbot in the bottom-right corner */
+    position: fixed;
+    bottom: 20px;   /* Space from the bottom of the screen */
+    right: 20px;    /* Space from the right of the screen */
+    z-index: 9999;  /* Ensure it stays on top of other elements */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+  
+  .chatbot-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .chat-window {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    resize: both;  /* Make the chat window resizable */
+    overflow: auto;
+    min-height: 300px;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .chat-input button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background-color: #45a049;
+  }
+  
+  .chat-caption {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #888;
+  }
+  
