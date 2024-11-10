@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+    const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
       });
       const [cursorVariant, setCursorVariant] = useState("default");
-      const navigate = useNavigate();
-    
     
       useEffect(() => {
         const mouseMove = e => {
@@ -51,19 +50,6 @@ const LandingPage = () => {
     return (
         <div className='main-container'>
             <div className='sub-container'>
-                <nav className='main-nav'>
-                    <div className='left-nav'>
-                        <a href='/blog' className='nav-item'>Blog</a>
-                        <a href='/meal-plans' className='nav-item'>Meal Plans</a>
-                        <a href='/recipes' className='nav-item'>Recipes</a>
-                    </div>
-                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
-                    <div className='right-nav'>
-                        <a href='/about' className='nav-item'>About Us</a>
-                        <a href='/contact-us' className='nav-item'>Contact Us</a>
-                        <a href='/register' className='nav-item'>Get Started</a>
-                    </div>
-                </nav>
                 <div className='section-one'>
                     <div className='sub-heading'>
                         <div className="heading">

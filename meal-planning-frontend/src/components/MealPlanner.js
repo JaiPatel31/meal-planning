@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import './MealPlanner.css';
 
 const MealPlanner = () => {
   const navigate = useNavigate();
@@ -84,30 +86,55 @@ const MealPlanner = () => {
   };
 
   return (
-    <div>
-      <h1>Meal Planner</h1>
-      <Calendar onChange={onDateChange} value={date} />
-      <h2>Selected Date: {date.toDateString()}</h2>
-      <h3>Saved Meals</h3>
-      <ul>
-        {mealsForSelectedDate.length > 0 ? (
-          mealsForSelectedDate.map((meal) => (
-            <li key={meal._id}>
-              <Link to={`/recipes/${meal.recipe._id}`}>
-                {meal.recipe?.Name || "Unnamed Recipe"} - {meal.mealType}
-              </Link>
-              <button onClick={() => handleDelete(meal._id)} style={{ marginLeft: '10px' }}>Delete</button>
-            </li>
-          ))
-        ) : (
-          <p>No meals saved for this date.</p>
-        )}
-      </ul>
+    <div className='meal-planner-main-container'>
+      <div className='meal-planner-container'>
+        <div className='meal-planner-content'>
+          <h2>Selected Date: {date.toDateString()}</h2>
+          <h3>Saved Meals</h3>
+          <ul>
+            {mealsForSelectedDate.length > 0 ? (
+              mealsForSelectedDate.map((meal) => (
+                <li key={meal._id}>
+                  <Link to={`/recipes/${meal.recipe._id}`} className='link-item'>
+                    {meal.recipe?.Name || "Unnamed Recipe"} - {meal.mealType}
+                  </Link>
+                  <button onClick={() => handleDelete(meal._id)} className='delete-button'>Delete</button>
+                </li>
+              ))
+            ) : (
+              <p>No meals saved for this date.</p>
+            )}
+          </ul>
 
-      {/* Button to go back to Recipe List */}
-      <button onClick={goBackToRecipeList} style={{ marginTop: '20px' }}>
-        Back to Recipe List
-      </button>
+          {/* Button to go back to Recipe List */}
+          <button onClick={goBackToRecipeList} className='back-button'>
+            Back to Recipe List
+          </button>
+        </div>
+        <div>
+          <Calendar onChange={onDateChange} value={date} className='meal-planner-calendar'/>
+        </div>
+      </div>
+      <div className='footer'>
+                <div className='footer-content'>
+                    <div className='footer-left'>
+                        <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='footer-logo'/>
+                        <h1>SavvyEats</h1>
+                    </div>
+                    <div className='footer-right'>
+                        <a href='/blog' className='footer-text'>Blog</a>
+                        <a href='/meal-plans' className='footer-text'>Meal Plans</a>
+                        <a href='/recipes' className='footer-text'>Recipes</a>
+                        <a href='/about-us' className='footer-text'>About Us</a>
+                        <a href='/footer-text' className='footer-text'>Contact Us</a>
+                        <a href='/register' className='footer-text'>Get Started</a>
+                    </div>
+                    <hr className='footer-line'/>
+                    <div className='footer-bottom'>
+                        <p>&copy; 2024 SavvyEats. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
     </div>
   );
 };

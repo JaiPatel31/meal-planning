@@ -40,7 +40,7 @@ const App = () => {
       <Router>
         <div>
           <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
-          <div style={{ marginTop: '60px' }}>
+          <div>
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/register" element={<Register />} />

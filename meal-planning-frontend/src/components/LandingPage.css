@@ -25,46 +25,6 @@ body {
     width: 100px;
 }
 
-.left-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #f73302;
-    color: white;
-    text-align: center;
-    height: 50px;
-    width: 400px;
-    border-radius: 40px;
-    margin-top: 25px;
-    opacity: 0.8;
-}
-
-.nav-item {
-    opacity: 1;
-    font-weight: bold;
-    margin-top: 15px;
-    color: white;
-}
-
-.nav-item:hover {
-    color: black;
-    cursor: pointer;
-}
-
-.right-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #f73302;
-    color: white;
-    text-align: center;
-    height: 50px;
-    width: 400px;
-    border-radius: 40px;
-    margin-top: 25px;
-    opacity: 0.8;
-}
-
 .heading {
     display: flex;
     align-items: center;
