@@ -8,6 +8,7 @@ import RecipeDetail from './components/RecipeDetail';
 import MealPlanner from './components/MealPlanner';
 import { MealPlanProvider } from './components/MealPlanContext';
 import Navbar from './components/Navbar';  // Import Navbar
+import Chatbot from './components/Chatbot';  // Import Chatbot Component
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -60,9 +61,12 @@ const App = () => {
             </Routes>
           </div>
         </div>
+        {/* Chatbot displayed on all pages */}
+        <Chatbot />
       </Router>
     </MealPlanProvider>
   );
 };
+
 
 export default App;

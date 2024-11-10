@@ -26,7 +26,7 @@ const recipeSchema = new mongoose.Schema({
   RecipeInstructions: { type: [String] } // Array of instructions
 });
 
-// Create the model based on the schema
-const Recipe = mongoose.model('Recipe', recipeSchema);
+// Avoid overwriting the model if it's already defined
+const Recipe = mongoose.models.Recipe || mongoose.model('Recipe', recipeSchema);
 
 module.exports = Recipe;
