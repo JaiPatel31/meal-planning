@@ -7,6 +7,7 @@ const recipeRoutes = require("./routes/recipes");
 const mealPlansRoutes = require("./routes/mealplans");
 const imageRoutes = require("./routes/imageRoutes"); // Import the image routes
 const chatbotRoute = require('./routes/chatbot'); // Import the chatbot route
+
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://jaipatel4717:bxmqtEaDUtLmRgue@mealplanningusers.sapy2.mongodb.net/?retryWrites=true&w=majority&appName=MealPlanningUsers", {
   useNewUrlParser: true,
@@ -17,8 +18,8 @@ mongoose.connect("mongodb+srv://jaipatel4717:bxmqtEaDUtLmRgue@mealplanningusers.
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.json());
+app.use(bodyParser.json({ limit: '10mb' }));  // Set the body-parser limit
+app.use(express.json({ limit: '10mb' }));     // Set the express.json limit
 
 // Define routes
 app.use("/api/auth", authRoutes);
@@ -37,3 +38,4 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

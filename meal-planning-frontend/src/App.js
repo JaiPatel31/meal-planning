@@ -8,13 +8,9 @@ import RecipeDetail from './components/RecipeDetail';
 import MealPlanner from './components/MealPlanner';
 import { MealPlanProvider } from './components/MealPlanContext';
 import Navbar from './components/Navbar';  // Import Navbar
-<<<<<<< HEAD
 import Chatbot from './components/Chatbot';  // Import Chatbot Component
 import Search from './components/Search';  // Import Search Component
-=======
-import AboutUs from './components/AboutUs'; // Import AboutUs component
->>>>>>> 07e38fdc (Remaining Styles)
-
+import AboutUs from './components/AboutUs';  // Import AboutUs Component
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     () => JSON.parse(localStorage.getItem('isAuthenticated')) || false
