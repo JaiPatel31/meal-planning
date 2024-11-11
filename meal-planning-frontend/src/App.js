@@ -9,6 +9,7 @@ import MealPlanner from './components/MealPlanner';
 import { MealPlanProvider } from './components/MealPlanContext';
 import Navbar from './components/Navbar';  // Import Navbar
 import Chatbot from './components/Chatbot';  // Import Chatbot Component
+import Search from './components/Search';  // Import Search Component
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(

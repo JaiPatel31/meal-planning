@@ -44,6 +44,7 @@ const LandingPage = () => {
     
       const textEnter = () => setCursorVariant("text");
       const textLeave = () => setCursorVariant("default");
+
       const handleRegisterClick = () => {
             navigate('/register');
      };
@@ -71,7 +72,7 @@ const LandingPage = () => {
                     <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730230765/Untitled_design-4_u3kqzg.png" alt="Healthy Food" className='food-image-two'/>
                 </div>
                 <div className='sub-heading-two'>
-                    <h1>1000 + Recipes</h1>
+                    <h1>2000 + Recipes</h1>
                     <p>Choose from a wide range of recipes to suit your taste and preferences.</p>
                 </div>
             </div>
@@ -86,11 +87,11 @@ const LandingPage = () => {
             </div>
             <div className='section-four'>
                 <div className='sub-heading'>
-                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730498148/Beige_and_Red_Elegant_Minimalist_Simple_Grocery_List_uhaswk.png" alt="food-image-three" className='food-image-four'/>
+                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1731267400/chat-3_tkujkh.png" alt="food-image-three" className='food-image-four'/>
                 </div>
                 <div className='sub-heading-three'>
-                    <h1>Shopping List</h1>
-                    <p>Get a shopping list for your meal plan.</p>
+                    <h1>Explore our Nutrition Chatbot</h1>
+                    <p>Get personalized nutrition advice from our AI-powered chatbot.</p>
                 </div>
             </div>
             <div className='section-five'>

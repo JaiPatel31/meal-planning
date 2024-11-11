@@ -57,14 +57,14 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
       />
         <nav className='main-nav'>
             <div className='left-nav'>
-                <Link to="/" className='nav-item'>Home</Link>
                 <Link to="/recipelist" className='nav-item'>Recipes</Link>
                 <Link to="/mealplanner" className='nav-item'>Meal Planner</Link>
             </div>
-            <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
+            <Link to="/" className='nav-item'>
+              <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
+            </Link>
             <div className='right-nav'>
                 <Link to="/about" className='nav-item'> About Us</Link>
-                <Link to="/contact-us" className='nav-item'>Contact Us</Link>
                 {isAuthenticated ? (
                   <button onClick={handleLogout} className='logout-button'>Logout</button>
                 ) : (

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-import { Link } from "react-router-dom"; // Import Link
 import "./RecipeList.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-=======
 import { Link, useLocation, useNavigate } from "react-router-dom";
->>>>>>> 397e026ad39c4bfd1c14af51e48a55d757ba3ef2
+import SearchComponent from './Search';
+import { ClipLoader } from 'react-spinners'; // Import the spinner
 
 function RecipeList() {
-
   const [recipes, setRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -60,7 +58,8 @@ function RecipeList() {
     };
 
     fetchRecipes();
-  }, [currentPage]); // Refetch recipes when the page changes
+  }, [currentPage]);
+
 
   const generateImage = async (recipeId, recipeTitle) => {
     try {
@@ -97,78 +96,67 @@ function RecipeList() {
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
       const prevPage = currentPage - 1;
       setCurrentPage(prevPage);
       navigate(`?page=${prevPage}`); // Update URL with previous page
     }
   };
 
+  const handleSearch = (searchTerm) => {
+    const searchTermLower = searchTerm.toLowerCase();
+    const filtered = recipes.filter((recipe, index) => {
+      return recipe.Name.toLowerCase().includes(searchTermLower) || index.toString().includes(searchTermLower);
+    });
+    setFilteredRecipes(filtered);
+  };
+
+
   return (
-<<<<<<< HEAD
     <div className="recipe-main-container">
+      <SearchComponent onSearch={handleSearch} /> 
       <div className="recipe-container">
-        {recipes.map((recipe) => {
-          const imageUrls = recipe.Images || [];
-          const imageUrl = Array.isArray(imageUrls) && imageUrls.length > 0 ? imageUrls[0] : "https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png";
-          return (
-            <a href={`/recipes/${recipe._id}`} className="recipe-a-tag">
-              <div key={recipe._id} className="recipe-sub-container">
-                <div className="recipe-image-container">
-                  <img
-                    src={imageUrl}
-                    alt={recipe.Name}
-                    className="recipe-image"
-                  />
+        {loading ? (
+          <ClipLoader size={50} color={"#f73302"} loading={loading} className="custom-spinner"/> // Show spinner while loading
+        ) : (
+          filteredRecipes.map((recipe) => {
+            const imageUrls = recipe.Images || [];
+            const imageUrl = imageUrls.length > 0 ? imageUrls[0] : "https://fallbackimage.com/image.png";
+
+            // If the image is still loading, show the placeholder
+            const displayImage = imageLoading[recipe._id]
+              ? "https://fallbackimage.com/placeholder.png" // Placeholder image URL
+              : imageUrl;
+
+            return (
+              <Link to={`/recipes/${recipe._id}`} key={recipe._id} className="recipe-a-tag">
+                <div className="recipe-sub-container">
+                  <div className="recipe-image-container">
+                    <img
+                      src={displayImage}
+                      alt={recipe.Name}
+                      className="recipe-image"
+                    />
+                  </div>
+                  <p className="recipe-title">{recipe.Name}</p>
                 </div>
-                <p className="recipe-title">{recipe.Name}</p>
-              </div>
-            </a>
-          );
-        })}
+              </Link>
+            );
+          })
+        )}
       </div>
       <div className="footer-container">
         <button onClick={handlePreviousPage} disabled={currentPage === 1} className="left-button">
-          <i className="bi bi-chevron-left"></i>
-=======
-    <div>
-      <h1>Recipes</h1>
-      {loading ? (
-        <p>Loading...</p> // Show loading text or spinner while fetching
-      ) : (
-        recipes.map((recipe) => {
-          const imageUrls = recipe.Images || [];
-          const imageUrl = imageUrls.length > 0 ? imageUrls[0] : "https://fallbackimage.com/image.png";
-
-          // If the image is still loading, show the placeholder
-          const displayImage = imageLoading[recipe._id]
-            ? "https://fallbackimage.com/placeholder.png" // Placeholder image URL
-            : imageUrl;
-
-          return (
-            <Link to={`/recipes/${recipe._id}`} key={recipe._id}>
-              <div style={{ display: "flex", alignItems: "center", margin: "10px 0" }}>
-                <img
-                  src={displayImage}
-                  alt={recipe.Name}
-                  style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "10px" }}
-                />
-                <h1>{recipe.Name}</h1>
-              </div>
-            </Link>
-          );
-        })
-      )}
-      <div>
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous
->>>>>>> 397e026ad39c4bfd1c14af51e48a55d757ba3ef2
+        <i className="bi bi-chevron-left"></i>
         </button>
         <span> Page {currentPage} of {totalPages} </span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages} className="right-button">
           <i className="bi bi-chevron-right"></i>
         </button>
       </div>
-<<<<<<< HEAD
+      <footer style={{textAlign: "center", fontStyle: "italic", fontSize: "15px" }}>
+        <p><strong>Disclaimer:</strong> Some images are AI-generated and may not be accurate representations of real-life food.</p>
+      </footer>
       <div className='footer'>
                 <div className='footer-content'>
                     <div className='footer-left'>
@@ -189,15 +177,10 @@ function RecipeList() {
                     </div>
                 </div>
             </div>
-=======
-
-      {/* Disclaimer */}
-      <footer style={{ marginTop: "20px", textAlign: "center", fontStyle: "italic", fontSize: "0.9em" }}>
-        <p><strong>Disclaimer:</strong> Some images are AI-generated and may not be accurate representations of real-life food.</p>
-      </footer>
->>>>>>> 397e026ad39c4bfd1c14af51e48a55d757ba3ef2
     </div>
   );
 }
 
+
 export default RecipeList;
+

@@ -90,3 +90,8 @@
     color: black;
 }
 
+.custom-spinner {
+    margin: 0 auto; /* Center the spinner */
+    display: block; /* Ensure the spinner is displayed as a block element */
+    font-weight: bold;
+}

@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-const Recipe = require("../models/recipe"); // Adjust path as needed
+const Recipe = require("../models/Recipe"); // Adjust path as needed
 
 router.post("/generate-image", async (req, res) => {
   const { recipeId, recipeTitle } = req.body; // Expecting recipeId to identify the recipe

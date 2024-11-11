@@ -1,3 +1,4 @@
+// RecipeDetail.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -119,20 +120,15 @@ const RecipeDetail = () => {
           <p><strong>Servings:</strong> {recipe.RecipeServings}</p>
           <p><strong>Calories:</strong> {recipe.Calories}</p>
           <Button onClick={showModal} className='modal-button'>Add to Meal Plan</Button>
-          {/* Modal for selecting date and meal type */}
-          <Modal
-            title="Select Date and Meal Type"
-            open={isModalVisible}
-            onOk={handleOk}
-            onCancel={handleCancel}
-          >
-            <DatePicker onChange={handleDateChange} />
-            <Select style={{ width: '100%', marginTop: '10px' }} onChange={handleMealTypeChange}>
-              <Option value="breakfast">Breakfast</Option>
-              <Option value="lunch">Lunch</Option>
-              <Option value="dinner">Dinner</Option>
-              <Option value="snacks">Snacks</Option>
-            </Select>
+          <Modal title="Select Date and Meal Type" open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            {/* Modal for selecting date and meal type */}
+              <DatePicker onChange={handleDateChange} />
+              <Select style={{ width: '100%', marginTop: '10px' }} onChange={handleMealTypeChange}>
+                <Option value="breakfast">Breakfast</Option>
+                <Option value="lunch">Lunch</Option>
+                <Option value="dinner">Dinner</Option>
+                <Option value="snacks">Snacks</Option>
+              </Select>
           </Modal>
         </div>
       </div>
