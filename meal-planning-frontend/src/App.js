@@ -8,8 +8,12 @@ import RecipeDetail from './components/RecipeDetail';
 import MealPlanner from './components/MealPlanner';
 import { MealPlanProvider } from './components/MealPlanContext';
 import Navbar from './components/Navbar';  // Import Navbar
+<<<<<<< HEAD
 import Chatbot from './components/Chatbot';  // Import Chatbot Component
 import Search from './components/Search';  // Import Search Component
+=======
+import AboutUs from './components/AboutUs'; // Import AboutUs component
+>>>>>>> 07e38fdc (Remaining Styles)
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -59,6 +63,8 @@ const App = () => {
               />
               <Route path="/recipes/:id" element={<RecipeDetail />} />
               <Route path="/mealplanner" element={<MealPlanner />} />
+              {/* Add the AboutUs route */}
+              <Route path="/about" element={<AboutUs />} />
             </Routes>
           </div>
         </div>

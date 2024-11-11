@@ -1,16 +1,16 @@
 
-.login-container {
+.register-container {
     font-family: 'Roboto', sans-serif;
     background-color: #fcd0c5;
     background-image: url(../../public/landingpage.jpeg);
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
   }
   
-  .login-form {
+  .register-form {
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #f73302 0%, #d00000 100%);
@@ -18,25 +18,26 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     padding: 50px;
     width: 100%;
-    max-width: 400px; 
+    max-width: 400px; /* Restrict width */
     text-align: center;
   }
   
-  .login-header {
+  .register-header {
     font-size: 24px;
     margin-bottom: 20px;
     color: #fff;
   }
   
-  .login-form input {
+  .register-input {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    width: 100%; /* Ensures the inputs are aligned and take the full width */
   }
   
-  .login-form button {
+  .register-button {
     margin-top: 20px;
     padding: 10px;
     font-size: 18px;
@@ -45,31 +46,31 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%; /* Makes the button the same width as the input fields */
   }
   
-  .login-form button:hover {
+  .register-button:hover {
     transform: scale(1.1);
     background-color: #1e0cb7;
   }
   
-  .login-form button:active {
+  .register-button:active {
     transform: scale(0.9);
   }
   
-  .register-prompt {
+  .register-link {
     margin-top: 15px;
     font-size: 14px;
     color: hsl(17, 24%, 94%);
-    margin-top: 20px; 
   }
   
-  .register-prompt a {
+  .register-link a {
     text-decoration: none;
     color: #1133dd;
     font-weight: bold;
   }
   
-  .register-prompt a:hover {
+  .register-link a:hover {
     text-decoration: underline;
   }
   

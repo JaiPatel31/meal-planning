@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"; // Import Link
+import "./Register.css";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -20,23 +21,29 @@ function Register() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleRegister}>
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Already have an account? <Link style={{ color: 'blue', textDecoration: 'underline' }} to="/login">Login</Link> {/* Link to login page */}
-      </p>
+    <div className="register-container">
+      <div className="register-form">
+        {/* Add Register title */}
+        <h2 className="register-header">Register</h2> 
+        <form onSubmit={handleRegister}>
+          <input
+            type="text"
+            className="register-input"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            className="register-input"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="register-button" type="submit">Register</button>
+        </form>
+        <p className="register-link">
+          Already have an account? <Link to="/login">Login</Link> {/* Link to login page */}
+        </p>
+      </div>
     </div>
   );
 }

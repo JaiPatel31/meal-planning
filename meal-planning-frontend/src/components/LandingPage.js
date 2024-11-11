@@ -3,6 +3,7 @@ import './LandingPage.css';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import AboutUs from './AboutUs';
 
 const LandingPage = () => {
     const navigate = useNavigate();
