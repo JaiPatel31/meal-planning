@@ -1,0 +1,24 @@
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    height: 30px;
+    width: 300px;
+    align-items: center;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    border-width: 0px;
+    outline: none;
+    border-radius: 20px;
+}

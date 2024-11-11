@@ -1,8 +1,92 @@
-.calendar-drop-area {
-    border: 2px dashed #4caf50;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  .calendar-drop-area:hover {
-    background-color: #e8f5e9;
-  }
+.meal-planner-main-container {
+  background-color: #ffb8a6;
+}
+
+
+.meal-planner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.meal-planner-calendar {
+  background-color: #ffe5db;
+  color: black;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.link-item {
+  text-decoration: none;
+  color: black;
+}
+
+.meal-planner-calendar .react-calendar__tile {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.meal-planner-calendar .react-calendar__tile--active {
+  background-color: #f73302;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.meal-planner-calendar .react-calendar__tile:hover {
+  background-color: #f73302;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.meal-planner-calendar .react-calendar__navigation button {
+  color: black;
+}
+
+.meal-planner-calendar .react-calendar__navigation button:hover {
+  background-color: #f73302;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+
+.meal-planner-content {
+  background-color: #ffe5db;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background-color: #f73302;
+  color: white;
+  font-weight: bold;
+  border-width: 0px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.delete-button {
+  background-color: #f73302;
+  color: white;
+  font-weight: bold;
+  border-width: 0px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  margin-left: 10px;
+}

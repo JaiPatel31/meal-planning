@@ -7,62 +7,8 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
-    min-height:200vh;
+    min-height: 150vh;
     background-color: #fcd0c5;
-}
-
-.main-nav {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.logo-image {
-    height: 100px;
-    width: 100px;
-}
-
-.left-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #f73302;
-    color: white;
-    text-align: center;
-    height: 50px;
-    width: 400px;
-    border-radius: 40px;
-    margin-top: 25px;
-    opacity: 0.8;
-}
-
-.nav-item {
-    opacity: 1;
-    font-weight: bold;
-    margin-top: 15px;
-    color: white;
-}
-
-.nav-item:hover {
-    color: black;
-    cursor: pointer;
-}
-
-.right-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #f73302;
-    color: white;
-    text-align: center;
-    height: 50px;
-    width: 400px;
-    border-radius: 40px;
-    margin-top: 25px;
-    opacity: 0.8;
 }
 
 .heading {
@@ -162,11 +108,23 @@ body {
     margin-top: 100px;
 }
 
+/* Define the keyframes for the animation */
+@keyframes scaleUpDown {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .food-image-four {
-    height: 550px;
+    height: 250px;
     width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: scaleUpDown 3s infinite; /* Animation name, duration, and repeat */
 }
 
 .section-five {
@@ -199,7 +157,7 @@ body {
 
 
 .sub-heading-three {
-    margin-top: 250px;
+    margin-top: 120px;
 }
 
 .footer {

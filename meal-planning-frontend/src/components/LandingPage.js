@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+    const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
       });
       const [cursorVariant, setCursorVariant] = useState("default");
-      const navigate = useNavigate();
-    
     
       useEffect(() => {
         const mouseMove = e => {
@@ -45,25 +44,13 @@ const LandingPage = () => {
     
       const textEnter = () => setCursorVariant("text");
       const textLeave = () => setCursorVariant("default");
+
       const handleRegisterClick = () => {
             navigate('/register');
      };
     return (
         <div className='main-container'>
             <div className='sub-container'>
-                <nav className='main-nav'>
-                    <div className='left-nav'>
-                        <a href='/blog' className='nav-item'>Blog</a>
-                        <a href='/meal-plans' className='nav-item'>Meal Plans</a>
-                        <a href='/recipes' className='nav-item'>Recipes</a>
-                    </div>
-                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
-                    <div className='right-nav'>
-                        <a href='/about' className='nav-item'>About Us</a>
-                        <a href='/contact-us' className='nav-item'>Contact Us</a>
-                        <a href='/register' className='nav-item'>Get Started</a>
-                    </div>
-                </nav>
                 <div className='section-one'>
                     <div className='sub-heading'>
                         <div className="heading">
@@ -85,7 +72,7 @@ const LandingPage = () => {
                     <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730230765/Untitled_design-4_u3kqzg.png" alt="Healthy Food" className='food-image-two'/>
                 </div>
                 <div className='sub-heading-two'>
-                    <h1>1000 + Recipes</h1>
+                    <h1>2000 + Recipes</h1>
                     <p>Choose from a wide range of recipes to suit your taste and preferences.</p>
                 </div>
             </div>
@@ -100,11 +87,11 @@ const LandingPage = () => {
             </div>
             <div className='section-four'>
                 <div className='sub-heading'>
-                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730498148/Beige_and_Red_Elegant_Minimalist_Simple_Grocery_List_uhaswk.png" alt="food-image-three" className='food-image-four'/>
+                    <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1731267400/chat-3_tkujkh.png" alt="food-image-three" className='food-image-four'/>
                 </div>
                 <div className='sub-heading-three'>
-                    <h1>Shopping List</h1>
-                    <p>Get a shopping list for your meal plan.</p>
+                    <h1>Explore our Nutrition Chatbot</h1>
+                    <p>Get personalized nutrition advice from our AI-powered chatbot.</p>
                 </div>
             </div>
             <div className='section-five'>
