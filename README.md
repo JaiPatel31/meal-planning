@@ -29,7 +29,7 @@ cd meal-planning-backend
 npm install
 ```
 ```bash
-cd ../meal-planning-frontend
+cd /meal-planning-frontend
 npm install
 ```
 ### 3. Set Up Environment Variables
