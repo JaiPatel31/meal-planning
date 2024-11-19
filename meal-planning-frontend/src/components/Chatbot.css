@@ -1,0 +1,116 @@
+.chatbot {
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe5db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-width: 0px;
+    /* Floating the chatbot in the bottom-right corner */
+    position: fixed;
+    bottom: 20px;   /* Space from the bottom of the screen */
+    right: 20px;    /* Space from the right of the screen */
+    z-index: 9999;  /* Ensure it stays on top of other elements */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+
+  .chatbot-header {
+    padding: 10px;
+    background-color: #f73302;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: black;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .chatbot-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .chatbot-close {
+    cursor: pointer;
+    border-width: 0px;
+    border-radius: 35px;
+    height: 40px;
+    width: 40px;
+    color: black;
+    margin: 5px;
+    font-weight: bold;
+    background-color: #ffe5db;
+    padding: 8px;
+  }
+  
+  .chat-window {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    resize: both;  /* Make the chat window resizable */
+    overflow: auto;
+    min-height: 300px;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #ffe5db;
+  }
+  
+  .chat-input {
+    padding: 8px;
+    border-radius: 10px;
+    width: 250px;
+    border-width: 0px;
+    outline: none;
+  }
+  
+  .chat-input-button {
+    padding: 10px;
+    background-color: #f73302;
+    color: white;
+    border-width: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background-color: #f73302;
+    opacity: 0.8;
+  }
+  
+  .chat-caption {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+  }
+  
+  .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+  }
+
+.chat-image  {
+    width: 75px;
+    height: 75px;
+}
+
+.chatbot-reply {
+  background-color: #f73302;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  max-width: 80%;
+  word-wrap: break-word;
+}

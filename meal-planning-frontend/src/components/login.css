@@ -1,0 +1,75 @@
+
+.login-container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fcd0c5;
+    background-image: url(../../public/landingpage.jpeg);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f73302 0%, #d00000 100%);
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+  }
+  
+  .login-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .login-form input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-form button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #2814df;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    transform: scale(1.1);
+    background-color: #1e0cb7;
+  }
+  
+  .login-form button:active {
+    transform: scale(0.9);
+  }
+  
+  .register-prompt {
+    margin-top: 15px;
+    font-size: 14px;
+    color: hsl(17, 24%, 94%);
+    margin-top: 20px; 
+  }
+  
+  .register-prompt a {
+    text-decoration: none;
+    color: #1133dd;
+    font-weight: bold;
+  }
+  
+  .register-prompt a:hover {
+    text-decoration: underline;
+  }
+  
