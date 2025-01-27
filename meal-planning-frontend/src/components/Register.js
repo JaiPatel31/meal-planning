@@ -21,21 +21,22 @@ function Register() {
   };
 
   return (
-    <div className="register-container">
+    <div>
+      <div className="register-container">
       <div className="register-form">
-        {/* Add Register title */}
-        <h2 className="register-header">Register</h2> 
         <form onSubmit={handleRegister}>
+          <p className="input">username</p>
           <input
             type="text"
             className="register-input"
-            placeholder="Username"
+            placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
           />
+          <p className="input">password</p>
           <input
             type="password"
             className="register-input"
-            placeholder="Password"
+            placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="register-button" type="submit">Register</button>
@@ -44,6 +45,28 @@ function Register() {
           Already have an account? <Link to="/login">Login</Link> {/* Link to login page */}
         </p>
       </div>
+    </div>
+    <div className='footer'>
+                <div className='footer-content'>
+                    <div className='footer-left'>
+                        <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='footer-logo'/>
+                        <h1>SavvyEats</h1>
+                    </div>
+                    <div className='footer-right'>
+                        <a href='/blog' className='footer-text'>Blog</a>
+                        <a href='/meal-plans' className='footer-text'>Meal Plans</a>
+                        <a href='/recipes' className='footer-text'>Recipes</a>
+                        <a href='/about-us' className='footer-text'>About Us</a>
+                        <a href='/footer-text' className='footer-text'>Contact Us</a>
+                        <a href='/register' className='footer-text'>Get Started</a>
+                    </div>
+                    <hr className='footer-line'/>
+                    <div className='footer-bottom'>
+                        <p>&copy; 2024 SavvyEats. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+
     </div>
   );
 }

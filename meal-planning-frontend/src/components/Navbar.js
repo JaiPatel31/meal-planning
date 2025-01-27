@@ -6,6 +6,11 @@ import "./Navbar.css";
 
 const Navbar = ({ isAuthenticated, onLogout }) => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -55,23 +60,39 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
           variants={variants}
           animate={cursorVariant}
       />
-        <nav className='main-nav'>
-            <div className='left-nav'>
-                <Link to="/recipelist" className='nav-item'>Recipes</Link>
-                <Link to="/mealplanner" className='nav-item'>Meal Planner</Link>
-            </div>
-            <Link to="/" className='nav-item'>
-              <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
-            </Link>
-            <div className='right-nav'>
-                <Link to="/about" className='nav-item'> About Us</Link>
-                {isAuthenticated ? (
-                  <button onClick={handleLogout} className='logout-button'>Logout</button>
-                ) : (
-                  <Link to="/login" className='nav-item'>Get Started</Link>
-                )}
-            </div>
-        </nav>
+        
+      <nav className='main-nav'>
+        <div className='left-nav'>
+          <Link to="/recipelist" className='nav-item'>Recipes</Link>
+          <Link to="/mealplanner" className='nav-item'>Meal Planner</Link>
+        </div>
+        <Link to="/" className='nav-item'>
+          <img src="https://res.cloudinary.com/dujmpn87j/image/upload/v1730144316/Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_processed_yb2a5y.png" alt="Meal Planning App Logo" className='logo-image'/>
+        </Link>
+        <div className='right-nav'>
+          <Link to="/about" className='nav-item'> About Us</Link>
+          {isAuthenticated ? (
+            <button onClick={handleLogout} className='logout-button'>Logout</button>
+          ) : (
+            <Link to="/login" className='nav-item'>Get Started</Link>
+          )}
+        </div>
+        <div className='hamburger' onClick={toggleMenu}>
+          &#9776;
+        </div>
+      </nav>
+      {isMenuOpen && (
+        <div className='mobile-menu'>
+          <Link to="/recipelist" className='nav-item' onClick={toggleMenu}>Recipes</Link>
+          <Link to="/mealplanner" className='nav-item' onClick={toggleMenu}>Meal Planner</Link>
+          <Link to="/about" className='nav-item' onClick={toggleMenu}> About Us</Link>
+          {isAuthenticated ? (
+            <button onClick={() => { handleLogout(); toggleMenu(); }} className='logout-button'>Logout</button>
+          ) : (
+            <Link to="/login" className='nav-item' onClick={toggleMenu}>Get Started</Link>
+          )}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,71 +1,80 @@
 .about-us {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #fcd0c5;
-}
-
-.about-us-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.about-us-left {
-    flex: 1;
-    padding: 0;
-    margin: 0;
-}
-
-.about-us-left img {
-    width: 300px; /* Adjust image width */
-    height: 400px;
-    border-radius: 2px;
-}
-
-.about-us-right {
-    flex: 2;
-    padding: 0;
-    display: flex;  /* Use flexbox to align content */
-    justify-content: flex-end;  /* Push image to the right side */
-    align-items: center;  /* Vertically align image with text */
-}
-
-.about-us-right img {
-    width: 600px; /* Set image width */
-    height: 300px; /* Set image height */
-    border-radius: 2px;
-    margin-left: 20px; /* Add space between the text and image */
-}
-
-.about-us-right p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-family:  Inter var, sans-serif;
+    background-color: #ffb8a6;
 }
 
 .three-images {
     display: flex;
     justify-content: space-between;
-}
-
-.image-box {
+    padding: 100px;
     text-align: center;
-    flex: 1;
-    padding: 10px;
+    font-size: 20px;
 }
 
 .image-box {
-    width: 120px;
-    border-radius: 80px;
-    border-radius: 8px;
-    height: 120px;
+    width: 200px;
+    border-radius: 200px;
+    height: 200px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.image-box p {
-    font-size: 1em;
-    margin-top: 10px;
-}
 
 .icon {
+    height: 25px;
+    width: 25px;
+}
+
+.footer {
+    background-image: linear-gradient(to right,#f73302, #f4a693,#f73302);
+    color: white;
+    text-align: center;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.footer-logo {
     height: 50px;
     width: 50px;
+    margin-right: 10px;
+}
+
+.footer-line {
+    border-color: white;
+    border-style: solid;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    margin: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
 }

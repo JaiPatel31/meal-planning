@@ -1,5 +1,5 @@
 body {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family:  Inter var, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -7,7 +7,6 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
-    min-height: 150vh;
     background-color: #fcd0c5;
 }
 
@@ -55,7 +54,10 @@ body {
 
 .section-one {
     text-align: center;
-    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-two {
@@ -97,8 +99,10 @@ body {
 
 .sub-container {
     background-image: url('https://res.cloudinary.com/dujmpn87j/image/upload/v1730248456/Untitled_design-5_pu4fwg.png');
-    background-size: cover;
-    height: 100vh;
+    background-size: contain;
+    background-attachment: fixed; 
+    height: 80vh;
+    width: 100vw;
 }
 
 .section-four {
@@ -132,6 +136,7 @@ body {
     flex-direction: row;
     text-align: center;
     justify-content: space-evenly;
+    padding-bottom: 50px;
 
 }
 
@@ -165,7 +170,6 @@ body {
     color: white;
     text-align: center;
     height: 30vh;
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,4 +216,147 @@ body {
 
 a {
     text-decoration: none;
+}
+
+@media (max-width: 1280px) {
+    .sub-container {
+        background-image: url('https://res.cloudinary.com/dujmpn87j/image/upload/v1730248456/Untitled_design-5_pu4fwg.png');
+        background-size: contain;
+        background-attachment: fixed; 
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .title {
+        font-size: 40px;
+      }
+
+      .first-button {
+        background-color: #f73302;
+        color: white;
+        border: none;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        height: 50px;
+        width: 260px;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0.8;
+        font-weight: bold;
+    }
+    
+
+}
+
+/* Responsive styles for medium-sized devices */
+@media (max-width: 768px) {
+    .main-container {
+        min-height: 100vh;
+    }
+
+    .title {
+        font-size: 30px;
+      }
+
+
+    .sub-container {
+        background-image: url('https://res.cloudinary.com/dujmpn87j/image/upload/v1730248456/Untitled_design-5_pu4fwg.png');
+        background-size: contain;
+        background-attachment: fixed; 
+        height: 35vh;
+        width: 100vw;
+    }
+
+    .first-button {
+        background-color: #f73302;
+        color: white;
+        border: none;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        opacity: 0.8;
+        font-weight: bold;
+    }
+    
+
+
+    .title {
+        font-size: 40px;
+    }
+}
+
+/* Responsive styles for small-sized devices */
+@media (max-width: 481px) {
+    .main-container {
+        min-height: 100vh;
+    }
+
+    .sub-container {
+        background-image: url('https://res.cloudinary.com/dujmpn87j/image/upload/v1730248456/Untitled_design-5_pu4fwg.png');
+        background-size: contain;
+        background-attachment: fixed; 
+        height: 25vh;
+    }
+
+    .first-button {
+        background-color: #f73302;
+        color: white;
+        border: none;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        height: 40px;
+        width: 180px;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0.8;
+        font-weight: bold;
+    }
+    
+
+
+    .title {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .cursor {
+        height: 16px;
+        width: 16px;
+    }
+
+    .title {
+        font-size: 20px;
+      }
+
+
+    .food-image-two {
+        height: 100px;
+        width: 100px;
+        border-radius: 200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .food-image-three {
+        height: 100px;
+        width: 150px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .food-image-four {
+        height: 100px;
+        width: 100px;
+        animation: scaleUpDown 3s infinite; /* Animation name, duration, and repeat */
+    }
+
+    .h1 {
+        font-size: 12px;
+    }
+
 }

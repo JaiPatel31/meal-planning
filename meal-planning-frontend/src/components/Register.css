@@ -1,40 +1,38 @@
 
 .register-container {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fcd0c5;
-    background-image: url(../../public/landingpage.jpeg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family:  Inter var, sans-serif;
+  background-color: #ffb8a6;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 100px;
   }
   
   .register-form {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #f73302 0%, #d00000 100%);
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    padding: 50px;
-    width: 100%;
-    max-width: 400px; /* Restrict width */
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
     text-align: center;
+    border-color: white;
+    border-style: solid;
   }
-  
-  .register-header {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #fff;
+
+  .input {
+    text-align: left;
+    font-weight: bold;
   }
   
   .register-input {
-    margin: 10px 0;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%; /* Ensures the inputs are aligned and take the full width */
+    width: 480px; /* Ensures the inputs are aligned and take the full width */
+    outline: none;
   }
   
   .register-button {
@@ -42,31 +40,22 @@
     padding: 10px;
     font-size: 18px;
     color: #fff;
-    background-color: #2814df;
+    background-color: #f73302;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%; /* Makes the button the same width as the input fields */
-  }
-  
-  .register-button:hover {
-    transform: scale(1.1);
-    background-color: #1e0cb7;
-  }
-  
-  .register-button:active {
-    transform: scale(0.9);
+    width: 100%; 
   }
   
   .register-link {
     margin-top: 15px;
     font-size: 14px;
-    color: hsl(17, 24%, 94%);
+    color: black;
   }
   
   .register-link a {
     text-decoration: none;
-    color: #1133dd;
+    color: #f73302;
     font-weight: bold;
   }
   

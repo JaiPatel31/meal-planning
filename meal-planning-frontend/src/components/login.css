@@ -1,39 +1,32 @@
 
 .login-container {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fcd0c5;
-    background-image: url(../../public/landingpage.jpeg);
+    font-family:  Inter var, sans-serif;
+    background-color: #ffb8a6;
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 100vh;
-    margin: 0;
+    padding: 100px;
   }
   
   .login-form {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #f73302 0%, #d00000 100%);
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    padding: 50px;
-    width: 100%;
-    max-width: 400px; 
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
     text-align: center;
-  }
-  
-  .login-header {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #fff;
+    border-color: white;
+    border-style: solid;
   }
   
   .login-form input {
-    margin: 10px 0;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    outline: none;
   }
   
   .login-form button {
@@ -41,31 +34,26 @@
     padding: 10px;
     font-size: 18px;
     color: #fff;
-    background-color: #2814df;
+    background-color: #f73302;;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  .login-form button:hover {
-    transform: scale(1.1);
-    background-color: #1e0cb7;
-  }
-  
-  .login-form button:active {
-    transform: scale(0.9);
+
+  .input {
+    text-align: left;
+    font-weight: bold;
   }
   
   .register-prompt {
     margin-top: 15px;
     font-size: 14px;
-    color: hsl(17, 24%, 94%);
-    margin-top: 20px; 
+    color: black;
   }
   
   .register-prompt a {
     text-decoration: none;
-    color: #1133dd;
+    color: #f73302;
     font-weight: bold;
   }
   
@@ -73,3 +61,56 @@
     text-decoration: underline;
   }
   
+  .footer {
+    background-image: linear-gradient(to right,#f73302, #f4a693,#f73302);
+    color: white;
+    text-align: center;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 0;
+  }
+
+.footer-logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.footer-line {
+    border-color: white;
+    border-style: solid;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    margin: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
